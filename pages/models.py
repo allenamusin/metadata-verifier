@@ -13,7 +13,6 @@ def get_timestamp(timestamp_string):
     datetime_object = datetime.strptime(timestamp_string, '%Y:%m:%d %H:%M:%S')
     return datetime_object
 
-# Create your models here.
 class Photo(models.Model):
     name = models.CharField(max_length=120)
     lat = models.DecimalField(max_digits=9, decimal_places=6)

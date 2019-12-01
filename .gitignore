@@ -8,3 +8,4 @@ getting-started/*
 node_modules
 static/bundle.js.tmp-browserify-*
 airzus/environment.py
+.DS_Store

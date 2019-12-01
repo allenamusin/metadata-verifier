@@ -1,4 +1,3 @@
-# pages/urls.py
 from django.urls import path
 from .views import HomePageView, upload_file, get_file, delete_files, delete_file
 
