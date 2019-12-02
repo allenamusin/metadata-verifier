@@ -10,6 +10,7 @@ export default class Upload extends Component {
     this.addMetadata = this.addMetadata.bind(this);
     this.processFiles = this.processFiles.bind(this);
 	}
+
   componentDidMount() {
     this.setState({
       isLoading: true,
@@ -28,6 +29,7 @@ export default class Upload extends Component {
       .catch(error => console.log(error)
       );
   }
+
   componentDidUpdate() {
     const { droppedFiles, metadata } = this.state;
     if (droppedFiles.length !== 0 && droppedFiles.length === metadata.length) {
@@ -46,12 +48,13 @@ export default class Upload extends Component {
         .catch(error => console.log(error));
     }
   }
+
   addMetadata(additionalMetadata) {
     this.setState({ metadata: this.state.metadata.concat(additionalMetadata) });
   }
+
   deleteFile(id){
-      let deleteId = id;
-      fetch(`/delete/${deleteId}`, {
+      fetch(`/delete/${id}`, {
         method: 'POST',
         headers: Token.getTokenHeader(),
       })
@@ -63,6 +66,7 @@ export default class Upload extends Component {
         })
         .catch(error => console.log(error));
   }
+
   deleteAllFiles(){
       fetch(`/delete`, {
         method: 'POST',
@@ -76,6 +80,7 @@ export default class Upload extends Component {
         })
         .catch(error => console.log(error));
   }
+
   processFiles(droppedFiles) {
     const that = this;
     this.setState({ droppedFiles, metadata: [] });
@@ -86,12 +91,16 @@ export default class Upload extends Component {
       });
     });
   }
+
   render() {
     const {val, current} = this.props;
     const shouldShowSpinner = this.state.isLoading;
     const showSpinner = shouldShowSpinner && (
           <div class="loadingSpinner">Spinner goes here!!!</div>
-      );
+    );
+    const nameDisplayed = eachFile.name.split('\\').slice(-1)[0];
+    const dateDisplayed = new Date(eachFile.timestamp).toLocaleDateString('en-US', {hour:"numeric", minute:"numeric"});
+
     return (
        <div>
         <div class="dropzoneWrapper">
@@ -134,8 +143,8 @@ export default class Upload extends Component {
                 <div class="nextLocation">
                   <a herf="" class="next" onClick={() => this.deleteFile(eachFile.id)}>X</a>
                 </div>
-                <div class="metaTextName">{eachFile.name.split('\\').slice(-1)[0]}</div>
-                <div>{new Date(eachFile.timestamp).toLocaleDateString('en-US', {hour:"numeric", minute:"numeric"})}</div>
+                <div class="metaTextName">{nameDisplayed}</div>
+                <div>{dateDisplayed}</div>
                 <div>Latitude: {eachFile.lat}</div>
                 <div>Longitude: {eachFile.lon}</div>
               </li>
