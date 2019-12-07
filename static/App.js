@@ -5,12 +5,10 @@ import Header from './components/Header';
 import TabContents from './components/TabContents';
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-				tabLocation: 0
-		};
-	}
+	state = {
+    tabLocation: 0
+  }
+
 	render() {
 		const NUMBER_OF_TABS=2;
 		const TAB_COUNT = () => {
@@ -33,8 +31,8 @@ class App extends React.Component {
 		);
 		const shouldShowBack = this.state.tabLocation > 0;
 		const backButton = shouldShowBack && (
-			<div class="backLocation">
-				<a herf="" class="next" onClick={TAB_COUNT}>Back &raquo;</a>
+			<div class="nextLocation">
+				<a herf="" class="next" onClick={TAB_COUNT}>&laquo; Back</a>
 			</div>
 		);
 

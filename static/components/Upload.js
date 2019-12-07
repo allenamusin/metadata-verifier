@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import Token from '../utils/Token';
 import Dropzone from 'react-dropzone';
 import EXIF from 'exif-js';
+import Loader from 'react-loader-spinner';
 
 export default class Upload extends Component {
-  constructor(props) {
-		super(props);
-		this.state = { savedFiles: [], droppedFiles: [], metadata: [], isLoading: false };
-    this.addMetadata = this.addMetadata.bind(this);
-    this.processFiles = this.processFiles.bind(this);
-	}
+  state = {
+    savedFiles: [],
+    droppedFiles: [],
+    metadata: [],
+    isLoading: false
+  }
 
   componentDidMount() {
     this.setState({
@@ -96,10 +97,15 @@ export default class Upload extends Component {
     const {val, current} = this.props;
     const shouldShowSpinner = this.state.isLoading;
     const showSpinner = shouldShowSpinner && (
-          <div class="loadingSpinner">Spinner goes here!!!</div>
+          <div class="loadingSpinner">
+          <Loader
+               type="ThreeDots"
+               color="#92B87C"
+               height={50}
+               width={50}
+            />
+          </div>
     );
-    const nameDisplayed = eachFile.name.split('\\').slice(-1)[0];
-    const dateDisplayed = new Date(eachFile.timestamp).toLocaleDateString('en-US', {hour:"numeric", minute:"numeric"});
 
     return (
        <div>
@@ -133,11 +139,13 @@ export default class Upload extends Component {
         </Dropzone>
        </div>
        <ul class="listUL">
-          <div class="deleteAllLocation">
+          <div class="deleteAll">
             <a herf="" class="next" onClick={() => this.deleteAllFiles(this.state.savedFiles)}>Delete All</a>
           </div>
           {showSpinner}
           {this.state.savedFiles.map(eachFile => {
+            const nameDisplayed = eachFile.name.split('\\').slice(-1)[0];
+            const dateDisplayed = new Date(eachFile.timestamp).toLocaleDateString('en-US', {hour:"numeric", minute:"numeric"});
             return (
               <li className="list-group-item" class="metadata">
                 <div class="nextLocation">

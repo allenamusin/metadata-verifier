@@ -5,7 +5,7 @@ export default class Review extends Component {
     const {val, current} = this.props;
     return (
        <div >
-          <p> You are on the Review tab. Check that your information is correct. </p>
+          <p> You are on the "Review" tab. Thanks for completing metadata verification. </p>
        </div>
     );
   }
