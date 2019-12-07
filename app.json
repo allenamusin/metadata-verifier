@@ -1,6 +1,6 @@
 {
   "name": "airzus",
-  "description": "A tool that takes images meta data and loads it to a database.",
+  "description": "A tool that takes images metadata and loads it to a database.",
   "image": "heroku/python",
   "repository": "https://github.com/heroku/python-getting-started",
   "keywords": ["python", "django" ],
