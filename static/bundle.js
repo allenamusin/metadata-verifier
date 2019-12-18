@@ -430,18 +430,12 @@ var Upload =
 function (_Component) {
   _inherits(Upload, _Component);
 
-  function Upload() {
-    var _getPrototypeOf2;
-
+  function Upload(props) {
     var _this;
 
     _classCallCheck(this, Upload);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Upload)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Upload).call(this, props));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
       savedFiles: [],
@@ -450,6 +444,8 @@ function (_Component) {
       isLoading: false
     });
 
+    _this.addMetadata = _this.addMetadata.bind(_assertThisInitialized(_this));
+    _this.processFiles = _this.processFiles.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -628,7 +624,7 @@ function (_Component) {
           }
         }, "X")), _react["default"].createElement("div", {
           "class": "metaTextName"
-        }, nameDisplayed), _react["default"].createElement("div", null, dateDisplayed), _react["default"].createElement("div", null, "Latitude: ", eachFile.lat), _react["default"].createElement("div", null, "Longitude: ", eachFile.lon));
+        }, nameDisplayed), _react["default"].createElement("div", null, dateDisplayed), _react["default"].createElement("div", null, "Latitude: ", eachFile.lat), _react["default"].createElement("div", null, "Longitude: ", eachFile.lon), _react["default"].createElement("div", null, "Airspace Name: ", eachFile.airspace_name), _react["default"].createElement("div", null, "Airspace Class: ", eachFile.airspace_class));
       })));
     }
   }]);

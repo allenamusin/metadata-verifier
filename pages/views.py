@@ -1,4 +1,5 @@
 import json
+import requests
 from django.http import JsonResponse
 from django.views.generic import TemplateView
 from .models import Photo
@@ -13,7 +14,7 @@ def upload_file(request):
     return get_file(request)
 
 def get_file(request):
-    results = Photo.objects.filter(user=request.user).values('name', 'lat', 'lon', 'timestamp', 'id')
+    results = Photo.objects.filter(user=request.user).values('name', 'lat', 'lon', 'timestamp', 'id', 'airspace_name', 'airspace_class')
     return JsonResponse({'results': list(results)})
 
 def delete_files(request):

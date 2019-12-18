@@ -5,11 +5,17 @@ import EXIF from 'exif-js';
 import Loader from 'react-loader-spinner';
 
 export default class Upload extends Component {
+    constructor(props) {
+        super(props);
+        this.addMetadata = this.addMetadata.bind(this);
+        this.processFiles = this.processFiles.bind(this);
+    }
+
     state = {
         savedFiles: [],
         droppedFiles: [],
         metadata: [],
-        isLoading: false
+        isLoading: false,
     }
 
     componentDidMount() {
@@ -155,6 +161,8 @@ export default class Upload extends Component {
                     <div>{dateDisplayed}</div>
                     <div>Latitude: {eachFile.lat}</div>
                     <div>Longitude: {eachFile.lon}</div>
+                    <div>Airspace Name: {eachFile.airspace_name}</div>
+                    <div>Airspace Class: {eachFile.airspace_class}</div>
                 </li>
               );
               })}
