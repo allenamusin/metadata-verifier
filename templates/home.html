@@ -1,25 +1,25 @@
 <html>
-	<head>
-		<title>Photo Metadata Airspace Classifier</title>
-		<link rel="stylesheet" href="/static/App.css">
-		<link rel="stylesheet" href="/static/index.css">
-	</head>
-	<body>
-		<div class="header logoWrapper">
-		 <img class="logo" src='/static/logo.png' alt="logo" />
-		 	<div class="logOutText">
-			 	<p><a href="{% url 'account_logout' %}">Log Out</a></p>
-		 	</div>
-		 </div>
-			 <div>
-				 {% if user.is_authenticated %}
-				 <div id="root"></div>
-				 <script src="/static/bundle.js"></script>
-				 {% else %}
-					 <p>You are not logged in</p>
-					 <a href="{% url 'account_login' %}">Log In</a> |
-					 <a href="{% url 'account_signup' %}">Sign Up</a>
-				 {% endif %}
-		 </div>
-	</body>
+    <head>
+        <title>Photo Metadata Airspace Classifier</title>
+        <link rel="stylesheet" href="/static/App.css">
+        <link rel="stylesheet" href="/static/index.css">
+    </head>
+    <body>
+        <div class="header logoWrapper">
+            <img class="logo" src='/static/logo.png' alt="logo" />
+            <div class="logOutText">
+                <p><a href="{% url 'account_logout' %}">Log Out</a></p>
+            </div>
+        </div>
+        <div>
+            {% if user.is_authenticated %}
+                <div id="root"></div>
+                <script src="/static/bundle.js"></script>
+            {% else %}
+                <p>You are not logged in</p>
+                <a href="{% url 'account_login' %}">Log In</a> |
+                <a href="{% url 'account_signup' %}">Sign Up</a>
+            {% endif %}
+        </div>
+    </body>
 </html>
