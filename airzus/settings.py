@@ -7,7 +7,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost', 'airzus.herokuapp.com', 'airzus2.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost', 'airzus.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
