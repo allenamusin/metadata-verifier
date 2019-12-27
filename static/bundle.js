@@ -115,8 +115,6 @@ function (_React$Component) {
       })), nextButton, backButton, _react["default"].createElement(_TabContents["default"], {
         current: this.state.tabLocation,
         val: 0
-      }), _react["default"].createElement("div", {
-        "class": "body"
       }));
     }
   }]);
