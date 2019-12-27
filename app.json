@@ -1,8 +1,8 @@
 {
-  "name": "airzus",
+  "name": "metadata-verifier",
   "description": "A tool that provides airspace classifications for images collected during drone flights based on image metadata.",
   "image": "heroku/python",
-  "repository": "https://github.com/heroku/python-getting-started",
+  "repository": "https://github.com/allenamusin/metadata-verifier",
   "keywords": ["python", "django" ],
   "addons": [ "heroku-postgresql" ],
   "env": {
