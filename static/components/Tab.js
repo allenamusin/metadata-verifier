@@ -7,12 +7,12 @@ export default class Tab extends React.Component {
             'UPLOAD',
             'REVIEW',
         ][val];
-            let className = 'item';
-            if (current == val) {
-                className += ' val';
-            }
-                return (
-                    <div herf="" class={className}>STEP {val+1} - {label} </div>
-                );
+        let className = 'item';
+        if (current == val) {
+            className += ' val';
+        }
+        return (
+            <div herf="" class={className}>STEP {val+1} - {label} </div>
+        );
     }
 }
