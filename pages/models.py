@@ -48,7 +48,15 @@ class Photo(models.Model):
             photo_model.save()
 
     def get_all(user):
-        return Photo.objects.filter(user=user).values('id', 'name', 'lat', 'lon', 'timestamp', 'airspace_name', 'airspace_class')
+        return Photo.objects.filter(user=user).values(
+            'id',
+            'name',
+            'lat',
+            'lon',
+            'timestamp',
+            'airspace_name',
+            'airspace_class'
+        )
 
     def delete_all(user):
         return Photo.objects.filter(user=user).delete()
