@@ -114,59 +114,63 @@ export default class Upload extends Component {
 
         return (
             <div>
-            <div class="dropzoneWrapper">
-            <Dropzone
-                onDrop={this.processFiles}
-                multiple
-            >
-            {({getRootProps, getInputProps, isDragActive}) => (
-                <div {...getRootProps()} class="dropzoneContents">
-                    <input {...getInputProps()} />
-                    <div>
-                        <div>
-                            <span class="dropzoneText">
-                                Drag & drop or click here to add your
-                            </span>
+                <div class="dropzoneWrapper">
+                    <Dropzone onDrop={this.processFiles} multiple>
+                    {({getRootProps, getInputProps, isDragActive}) => (
+                        <div {...getRootProps()} class="dropzoneContents">
+                            <input {...getInputProps()} />
+                            <div>
+                                <div>
+                                    <span class="dropzoneText">
+                                        Drag & drop or click here to add your
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="dropzoneText">
+                                        compliant aerial image files.
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="dropzoneAlertText">
+                                        { isDragActive && 'Let go!' }
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    <div>
-                        <span class="dropzoneText">
-                            compliant aerial image files.
-                        </span>
-                    </div>
-                    <div>
-                        <span class="dropzoneAlertText">
-                            { isDragActive && 'Let go!' }
-                        </span>
-                    </div>
+                    )}
+                    </Dropzone>
                 </div>
-            </div>
-        )}
-        </Dropzone>
-        </div>
-        <ul class="listUL">
-            <div class="deleteAll">
-                <a herf="" class="next" onClick={() => this.deleteAllFiles(this.state.savedFiles)}>Delete All</a>
-            </div>
-            {showSpinner}
-            {this.state.savedFiles.map(eachFile => {
-                const nameDisplayed = eachFile.name.split('\\').slice(-1)[0];
-                const dateDisplayed = new Date(eachFile.timestamp).toLocaleDateString('en-US', {hour:"numeric", minute:"numeric"});
-            return (
-                <li className="list-group-item" class="metadata">
-                    <div class="nextLocation">
-                        <a herf="" class="next" onClick={() => this.deleteFile(eachFile.id)}>X</a>
+                <ul class="listUL">
+                    <div class="deleteAll">
+                        <a
+                            herf=""
+                            class="next"
+                            onClick={() => this.deleteAllFiles(this.state.savedFiles)}
+                        >
+                            Delete All
+                        </a>
                     </div>
-                    <div class="metaTextName">{nameDisplayed}</div>
-                    <div>{dateDisplayed}</div>
-                    <div>Latitude: {eachFile.lat}</div>
-                    <div>Longitude: {eachFile.lon}</div>
-                    <div>Airspace Name: {eachFile.airspace_name}</div>
-                    <div>Airspace Class: {eachFile.airspace_class}</div>
-                </li>
-              );
-              })}
-        </ul>
-        </div>
+                    {showSpinner}
+                    {this.state.savedFiles.map(eachFile => {
+                        const nameDisplayed = eachFile.name.split('\\').slice(-1)[0];
+                        const dateDisplayed = new Date(eachFile.timestamp)
+                            .toLocaleDateString('en-US', {hour:"numeric", minute:"numeric"});
+                        return (
+                            <li className="list-group-item" class="metadata">
+                                <div class="nextLocation">
+                                    <a herf="" class="next" onClick={() => this.deleteFile(eachFile.id)}>X</a>
+                                </div>
+                                <div class="metaTextName">{nameDisplayed}</div>
+                                <div>{dateDisplayed}</div>
+                                <div>Latitude: {eachFile.lat}</div>
+                                <div>Longitude: {eachFile.lon}</div>
+                                <div>Airspace Name: {eachFile.airspace_name}</div>
+                                <div>Airspace Class: {eachFile.airspace_class}</div>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         );
     }
 }
