@@ -29,11 +29,22 @@ class Photo(models.Model):
             lat = get_coordinate(photo['GPSLatitude'], photo['GPSLatitudeRef'])
             lon = get_coordinate(photo['GPSLongitude'], photo['GPSLongitudeRef'])
             timestamp = get_timestamp(photo['DateTimeOriginal'])
-            t = requests.post('http://airspace-service.herokuapp.com/geo/getAirspace', data = {"longitude": lon, "latitude": lat})
+            t = requests.post(
+                'http://airspace-service.herokuapp.com/geo/getAirspace',
+                data = {"longitude": lon, "latitude": lat}
+            )
             airspace_data=t.json()
             airspace_name =airspace_data['name']
             airspace_class =airspace_data['class']
-            photo_model = Photo(name=name, lat=lat, lon=lon, timestamp=timestamp, user=user, airspace_name=airspace_name, airspace_class=airspace_class)
+            photo_model = Photo(
+                name=name,
+                lat=lat,
+                lon=lon,
+                timestamp=timestamp,
+                user=user,
+                airspace_name=airspace_name,
+                airspace_class=airspace_class
+            )
             photo_model.save()
 
     def get_all(user):
