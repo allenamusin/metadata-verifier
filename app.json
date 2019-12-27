@@ -1,6 +1,6 @@
 {
   "name": "airzus",
-  "description": "A tool that takes images metadata and loads it to a database.",
+  "description": "A tool that provides airspace classifications for images collected during drone flights based on image metadata.",
   "image": "heroku/python",
   "repository": "https://github.com/heroku/python-getting-started",
   "keywords": ["python", "django" ],
