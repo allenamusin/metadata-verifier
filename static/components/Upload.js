@@ -33,8 +33,7 @@ export default class Upload extends Component {
                     isLoading: false,
                 });
             })
-            .catch(error => console.log(error)
-            );
+            .catch(error => console.log(error));
     }
 
     componentDidUpdate() {
