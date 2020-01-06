@@ -14,7 +14,7 @@ The backend services were developed with Python, Django and PostgreSQL. The core
 
 ## Demo
 
-Visit https://airzus.herokuapp.com and sign up with any email address and password. Download the 2 photos at https://bit.ly/2ZSMCSQ and https://bit.ly/2ZSMCSQ to your computer and then drag and drop them into the web app to discover their airspace classification for each photo.
+Visit https://airzus.herokuapp.com and sign up with any email address and password. Download the 2 photos at https://github.com/allenamusin/metadata-verifier/raw/master/sample/DJI_0014.JPG and https://github.com/allenamusin/metadata-verifier/raw/master/sample/DJI_0036.JPG to your computer and then drag and drop them into the web app to discover their airspace classification for each photo.
 
 ## Instructions to setup the app for local development
 
