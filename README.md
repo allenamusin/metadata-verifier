@@ -1,4 +1,4 @@
-# metadata-verifier
+# Metadata Verifier
 
 ## Summary
 
