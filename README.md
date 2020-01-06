@@ -4,11 +4,11 @@
 
 Metadata Verifier is a web application that determines airspace compliance for drone flights based on uploaded photo metadata. The app allows a user to upload photos with HTML5 drag and drop and determines the airspace classification by reading geographic coordinates and timing data from the extracted metadata.
 
-## Technologies used - User Interface
+## Technologies used for the user interface
 
 The user interface for the app was developed with Javascript and React. The `static` folder contains all Javascript and CSS for the app.
 
-## Technologies used - Backend Services
+## Technologies used for backend services
 
 The backend services were developed with Python, Django and PostgreSQL. The core functionality that powers the backend services is in the Django app `pages`.
 
