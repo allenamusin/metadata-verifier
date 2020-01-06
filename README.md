@@ -8,13 +8,13 @@ The `static` folder contains all Javascript and CSS for the app. The core functi
 
 ## Instructions to setup the app for local development
 
-1.              Install python modules and active virtualenv:
+1. Install python modules and active virtualenv:
 ```
 python3 -m venv env
 source ./env/bin/activate
 pip install -r requirements.txt
 ```
-2.              Create a file at `airzus/environment.py` with the contents below and replace only `'PLACEYOURSECRETKEYHERE'`:
+2. Create a file at `airzus/environment.py` with the contents below and replace only `'PLACEYOURSECRETKEYHERE'`:
 
 ```
 DATABASES = ENV_DATABASES = {
@@ -27,15 +27,14 @@ DATABASES = ENV_DATABASES = {
 SECRET_KEY = ENV_SECRET_KEY = 'PLACEYOURSECRETKEYHERE'
 ```
 
-3.	You can run the Django web server with the following commands and then visit http://127.0.0.1:8000/ to use the app:
+3. You can run the Django web server with the following commands and then visit http://127.0.0.1:8000/ to use the app:
 
 ```
 cd airzus
 python manage.py runserver
 ```
 
-
-4.     	You can rebuild the javascript bundle (`bundle.js`) with the following commands:
+4. You can rebuild the javascript bundle (`bundle.js`) with the following commands:
 
 ```
 cd static
