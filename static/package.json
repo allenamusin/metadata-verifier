@@ -1,0 +1,29 @@
+{
+    "watch": {
+        "build": "**/*.{js,css}"
+    },
+    "scripts": {
+        "build": "browserify -t [ babelify --presets [ @babel/preset-react @babel/preset-env ] --plugins [@babel/plugin-proposal-class-properties] ] ./index.js -o ./bundle.js",
+        "watch": "npm-watch"
+    },
+    "dependencies": {
+        "react": "^16.6.3",
+        "react-dom": "^16.6.3",
+        "react-dropzone": "^10.1.10",
+        "js-cookie": "^2.2.1",
+        "exif-js": "^2.3.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.2.0",
+        "@babel/core": "^7.2.0",
+        "@babel/preset-env": "^7.2.0",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/plugin-proposal-class-properties": "^7.7.4",
+        "babel-preset-minify": "^0.5.0",
+        "babel-preset-react": "^6.24.1",
+        "babelify": "^10.0.0",
+        "browserify": "^16.2.3",
+        "npm-watch": "0.6.0",
+        "react-loader-spinner": "^3.1.5"
+    }
+}
