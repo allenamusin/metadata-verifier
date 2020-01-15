@@ -1,4 +1,13 @@
-<h2>Log In</h2>
+<html>
+    <head>
+        <title>Photo Metadata Airspace Classifier</title>
+        <link rel="stylesheet" href="/static/App.css">
+        <link rel="stylesheet" href="/static/index.css">
+    </head>
+    <body>
+        <div class="header logoWrapper">
+            <img class="logo" src='/static/logo.png' alt="logo" />
+        </div>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
