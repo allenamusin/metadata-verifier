@@ -8,9 +8,10 @@
         <div class="header logoWrapper">
             <img class="logo" src='/static/logo.png' alt="logo" />
         </div>
-
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-</form>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign Up</button>
+        </form>
+    </body>
+</html>
