@@ -16,6 +16,10 @@ The backend services were developed with Python, Django and PostgreSQL. The core
 
 Visit https://airzus.herokuapp.com and sign up with any email address and password. Download the 2 photos at https://github.com/allenamusin/metadata-verifier/raw/master/sample/DJI_0014.JPG and https://github.com/allenamusin/metadata-verifier/raw/master/sample/DJI_0036.JPG to your computer and then drag and drop them into the web app to discover their airspace classification for each photo.
 
+##Prerequisites
+
+Postgres must be installed beforehand. It can be installed with `brew install postgresql`.
+
 ## Instructions to setup the app for local development
 
 1. Install python modules and activate virtualenv:
@@ -40,7 +44,7 @@ SECRET_KEY = ENV_SECRET_KEY = 'PLACEYOURSECRETKEYHERE'
 3. You can run the Django web server with the following commands and then visit http://127.0.0.1:8000/ to use the app:
 
 ```
-cd airzus
+python manage.py migrate
 python manage.py runserver
 ```
 
